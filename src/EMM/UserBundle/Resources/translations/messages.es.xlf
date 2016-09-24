@@ -157,7 +157,59 @@
             <trans-unit id="39">
                 <source>The user could not be deleted.</source>
                 <target>El usuario no ha sido eliminado.</target>
-            </trans-unit>            
+            </trans-unit>
+            <trans-unit id="40">
+                <source>Search user</source>
+                <target>Buscar usuario</target>
+            </trans-unit>
+            <trans-unit id="41">
+                <source>Search</source>
+                <target>Buscar</target>
+            </trans-unit> 
+            <trans-unit id="42">
+                <source>No search results</source>
+                <target>No existe resultados</target>
+            </trans-unit> 
+            <trans-unit id="43">
+                <source></source>
+                <target></target>
+            </trans-unit> 
+            <trans-unit id="44">
+                <source></source>
+                <target></target>
+            </trans-unit> 
+            <trans-unit id="45">
+                <source></source>
+                <target></target>
+            </trans-unit> 
+            <trans-unit id="46">
+                <source></source>
+                <target></target>
+            </trans-unit> 
+            <trans-unit id="47">
+                <source></source>
+                <target></target>
+            </trans-unit> 
+            <trans-unit id="48">
+                <source></source>
+                <target></target>
+            </trans-unit> 
+            <trans-unit id="49">
+                <source></source>
+                <target></target>
+            </trans-unit> 
+            <trans-unit id="50">
+                <source></source>
+                <target></target>
+            </trans-unit> 
+            <trans-unit id="51">
+                <source></source>
+                <target></target>
+            </trans-unit> 
+            <trans-unit id="52">
+                <source></source>
+                <target></target>
+            </trans-unit>               
         </body>
     </file>
 </xliff>

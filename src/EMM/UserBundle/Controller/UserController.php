@@ -14,29 +14,20 @@ class UserController extends Controller
 {
     public function indexAction(Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
-        
-        // $users = $em->getRepository('EMMUserBundle:User')->findAll();
-        
-        /*
-        
-        $res = 'Lista de usuarios: <br />';
-        
-        foreach($users as $user)
-        {
-            $res .= 'Usuario: ' . $user->getUsername() . ' - Email: ' . $user->getEmail() . '<br />';
+        $searchQuery = $request->get('query');
+
+        if(!empty($searchQuery)){
+            $finder = $this->container->get('fos_elastica.finder.app.user');
+            $users = $finder->createPaginatorAdapter($searchQuery);
+        }else{
+            $em = $this->getDoctrine()->getManager();
+            $dql = "SELECT u FROM EMMUserBundle:User u ORDER BY u.id DESC";
+            $users = $em->createQuery($dql);
         }
-        
-        return new Response($res);
-        */
-        
-        $dql = "SELECT u FROM EMMUserBundle:User u ORDER BY u.id DESC";
-        $users = $em->createQuery($dql);
-        
         $paginator = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
             $users, $request->query->getInt('page', 1),
-            10
+            4
         );
         
         $deleteFormAjax = $this->createCustomForm(':USER_ID', 'DELETE', 'emm_user_delete');
